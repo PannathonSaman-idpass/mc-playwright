@@ -68,4 +68,5 @@ export class CampaignPage{
         // await this.page.goto('https://dev-mychannel.cdc.ais.th/sale-cart/cart-page?transactionId=SALE250624183646-PB43949&orderId=685a8dcebb4ade2f69137a01&action=ADD');
     }
 
+    
 }

@@ -37,9 +37,9 @@ export class TransactionPage{
         await this.address.click();
     }
 
-    async gotoContract() {
+    async gotoContractPage() {
         await this.gotoContract.click();
-        await page.goto('https://dev-mychannel.cdc.ais.th/sale-device-sales/e-contract?transactionId=SALE250624183646-PB43949&orderId=685a8dcebb4ade2f69137a01&action=ADD');
+        // await page.goto('https://dev-mychannel.cdc.ais.th/sale-device-sales/e-contract?transactionId=SALE250624183646-PB43949&orderId=685a8dcebb4ade2f69137a01&action=ADD');
     }
 
     async ConfirmContract() {
@@ -50,4 +50,5 @@ export class TransactionPage{
     }
 
 
+    
 }
