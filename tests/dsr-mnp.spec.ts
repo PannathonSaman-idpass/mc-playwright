@@ -13,7 +13,7 @@ const userLogin = {
 };
 
 test.describe('Mychannel', () => {
-  test.setTimeout(120000);
+  test.setTimeout(150000);
   const url = "https://sit-mychannel.cdc.ais.th/newlogin/callback-signin"
 
   test.beforeEach(async({ page }) => {
@@ -58,12 +58,13 @@ test.describe('Mychannel', () => {
     await campaignPage.ChooseCare();
     await campaignPage.gotoCart();
 
-    // await transactionPage.ConfirmCart();
-    // await transactionPage.ChoosePaymentMethod();
-    // await transactionPage.ChooseAddress();
-    // await transactionPage.gotoContract();
-    // await transactionPage.ConfirmContract
-    
+    await transactionPage.ConfirmCart();
+    await transactionPage.ChoosePaymentMethod();
+    await transactionPage.ChooseAddress();
+    await transactionPage.gotoContractPage();
+    await transactionPage.ConfirmContract();
+    await transactionPage.SignContract();
+
 
   });
 });

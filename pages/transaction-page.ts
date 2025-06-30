@@ -8,7 +8,8 @@ export class TransactionPage{
     readonly confirmPayment: Locator;
     readonly address: Locator;
     readonly gotoContract: Locator;
-    readonly checkContract: Locator;
+    readonly confirmContract: Locator;
+    readonly signContract: Locator;
 
 
     constructor(page: Page) {
@@ -19,7 +20,8 @@ export class TransactionPage{
         this.confirmPayment = page.getByTestId('addPaymentMethod');
         this.address = page.locator('span').filter({ hasText: 'ที่อยู่ตามใบแจ้งค่าใช้บริการ บ้านเลขที่ 6 หมู่บ้าน เอไอเอส อาคาร 6' });
         this.gotoContract = page.getByTestId('buttonถัดไป');
-        this.checkContract = page.getByTestId('confirmContract');
+        this.confirmContract = page.getByTestId('confirmContract');
+        this.signContract = page.getByTestId('inputSignPad');
 
     }
 
@@ -39,16 +41,24 @@ export class TransactionPage{
 
     async gotoContractPage() {
         await this.gotoContract.click();
-        // await page.goto('https://dev-mychannel.cdc.ais.th/sale-device-sales/e-contract?transactionId=SALE250624183646-PB43949&orderId=685a8dcebb4ade2f69137a01&action=ADD');
+        await this.page.waitForTimeout(10000);
     }
 
     async ConfirmContract() {
-        await this.checkContract.click();
+        await this.confirmContract.click();
+        await this.nextButton.click();
     }
 
-    async Next() {
+    async SignContract() {
+        await this.signContract
+        .click({
+            position: {
+                x: 646,
+                y: 194
+            }
+        });
+        await this.nextButton.click();
+
     }
 
-
-    
 }

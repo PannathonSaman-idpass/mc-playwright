@@ -20,7 +20,7 @@ export class CampaignPage{
         this.business = page.getByTestId('flow-MNP');
         this.campaign = page.getByTestId('campaignDetail-2').getByRole('cell', { name: 'Hot Deal No Pay ADV สำหรับ MNP' });
         this.trade = page.getByText('TP25018597 ราคา 51,900');
-        this.addDocButton = page.getByTestId('extraDocButton');
+        this.addDocButton = page.locator('app-sale-package iframe').contentFrame().getByTestId('extraDocButton');
         this.addDocCapture = page.getByTestId('captureDoc');
         this.nextButton = page.getByTestId('buttonNext');
         this.package = page.locator('app-sale-package iframe').contentFrame().getByRole('radio', { name: 'แพ็กเกจ 5G Max Speed 899 บาท' });
@@ -65,8 +65,5 @@ export class CampaignPage{
 
     async gotoCart() {
         await this.nextButton.click();
-        // await this.page.goto('https://dev-mychannel.cdc.ais.th/sale-cart/cart-page?transactionId=SALE250624183646-PB43949&orderId=685a8dcebb4ade2f69137a01&action=ADD');
     }
-
-    
 }
