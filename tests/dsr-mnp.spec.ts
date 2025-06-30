@@ -13,7 +13,8 @@ const userLogin = {
 };
 
 test.describe('Mychannel', () => {
-  const url = "https://dev-mychannel.cdc.ais.th/newlogin/callback-signin"
+  test.setTimeout(120000);
+  const url = "https://sit-mychannel.cdc.ais.th/newlogin/callback-signin"
 
   test.beforeEach(async({ page }) => {
       const loginPage = new LoginPage(page);
@@ -51,11 +52,11 @@ test.describe('Mychannel', () => {
     await campaignPage.ChooseCampaign();
     await campaignPage.ChooseTrade();
 
-    // await campaignPage.AddDocoument();
+    await campaignPage.AddDocoument();
     
-    // await campaignPage.ChoosePackage();
-    // await campaignPage.ChooseCare();
-    // await campaignPage.gotoCart();
+    await campaignPage.ChoosePackage();
+    await campaignPage.ChooseCare();
+    await campaignPage.gotoCart();
 
     // await transactionPage.ConfirmCart();
     // await transactionPage.ChoosePaymentMethod();

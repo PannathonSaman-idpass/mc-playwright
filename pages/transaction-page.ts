@@ -16,7 +16,7 @@ export class TransactionPage{
         this.nextButton = page.getByTestId('buttonNext');
         this.confirmCart = page.getByTestId('buttonPayNow');
         this.choosePayment = page.getByTestId('paymentMethod-combinePayment-CA');
-        this.confirmPayment = page.getByRole('button', { name: 'ยืนยันชําระเงิน' });
+        this.confirmPayment = page.getByTestId('addPaymentMethod');
         this.address = page.locator('span').filter({ hasText: 'ที่อยู่ตามใบแจ้งค่าใช้บริการ บ้านเลขที่ 6 หมู่บ้าน เอไอเอส อาคาร 6' });
         this.gotoContract = page.getByTestId('buttonถัดไป');
         this.checkContract = page.getByTestId('confirmContract');

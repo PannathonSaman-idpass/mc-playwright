@@ -13,7 +13,7 @@ export class LandingPage {
 
     }
 
-    async gotoSaleMenu(url: string) {
+    async gotoSaleMenu() {
         await this.saleLandingMenu.click();
     } 
 

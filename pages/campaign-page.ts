@@ -19,8 +19,8 @@ export class CampaignPage{
         this.productColor = page.getByTestId('selectColor-GRAPHITE');
         this.business = page.getByTestId('flow-MNP');
         this.campaign = page.getByTestId('campaignDetail-2').getByRole('cell', { name: 'Hot Deal No Pay ADV สำหรับ MNP' });
-        this.trade = page.getByText('TP25018597 Hot Deal with NO');
-        this.addDocButton = page.locator('app-sale-package iframe').contentFrame().getByRole('button', { name: '   เอกสารเพิ่มเติม' });
+        this.trade = page.getByText('TP25018597 ราคา 51,900');
+        this.addDocButton = page.getByTestId('extraDocButton');
         this.addDocCapture = page.getByTestId('captureDoc');
         this.nextButton = page.getByTestId('buttonNext');
         this.package = page.locator('app-sale-package iframe').contentFrame().getByRole('radio', { name: 'แพ็กเกจ 5G Max Speed 899 บาท' });
@@ -31,7 +31,7 @@ export class CampaignPage{
     }
 
     async ChooseColor() {
-        await expect(this.productColor).toBeVisible({ timeout: 5000 });
+        await expect(this.productColor).toBeVisible({ timeout: 20000 });
         await this.productColor.click();
     } 
 
