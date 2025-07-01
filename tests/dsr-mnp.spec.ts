@@ -43,6 +43,7 @@ test.describe('Mychannel', () => {
     await productPage.gotoforU();
 
     await kycPage.TakePhoto();
+    await kycPage.ConfirmTakePhoto();
     await kycPage.CheckCustInfo();
 
     await mobileNumPage.ChooseNumber();

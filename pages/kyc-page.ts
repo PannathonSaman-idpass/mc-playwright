@@ -15,7 +15,7 @@ export class KYCPage{
         this.takePhotoButton = page.getByTestId('captureIdCard');
         this.nextButton = page.getByTestId('buttonNext');     
         this.custInfoNextButton = page.getByTestId('buttonNext');
-        
+
         this.CheckCondition = page.getByText('ต้องการทำรายการเดิมหรือไม่?');
         this.NewOrder = page.getByTestId('buttonCreateNewOrder');
 
@@ -24,12 +24,15 @@ export class KYCPage{
     async TakePhoto() {
         await this.chooseTakePhoto.click();
         await this.takePhotoButton.click();
-        await this.nextButton.click();
         
+    }
+
+    async ConfirmTakePhoto(){
         if (await this.CheckCondition.isVisible()) {
             await this.NewOrder.click();
         }
-    } 
+        await this.nextButton.click(); 
+    }
 
     async CheckCustInfo() {
         await this.custInfoNextButton.click();
