@@ -25,7 +25,7 @@ export class CampaignPage{
         this.nextButton = page.getByTestId('buttonNext');
         this.package = page.locator('app-sale-package iframe').contentFrame().getByRole('radio', { name: 'แพ็กเกจ 5G Max Speed 899 บาท' });
         this.dayActivated = page.locator('app-sale-package iframe').contentFrame().getByText('วันถัดไป');
-        this.careService = page.locator('app-sale-care iframe').contentFrame().getByTestId('radioAIS Care Plus for iPhone1');
+        this.careService = page.locator('app-sale-care iframe').contentFrame().getByTestId('radioAIS Care Plus for iPhone0');
         this.email = page.locator('app-sale-care iframe').contentFrame().getByTestId('inputTextEmail');
 
     }
@@ -48,8 +48,14 @@ export class CampaignPage{
     }
 
     async AddDocoument() {
-        await this.addDocButton.click();
+        await this.addDocButton.click();    
+    }
+
+    async AddDocumentCapture(){
         await this.addDocCapture.click();
+    }
+
+    async ConfirmDocument(){
         await this.nextButton.click();
     }
 

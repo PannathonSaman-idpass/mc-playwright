@@ -54,6 +54,8 @@ test.describe('Mychannel', () => {
     await campaignPage.ChooseTrade();
 
     await campaignPage.AddDocoument();
+    await campaignPage.AddDocumentCapture();
+    await campaignPage.ConfirmDocument();
     
     await campaignPage.ChoosePackage();
     await campaignPage.ChooseCare();
