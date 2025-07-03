@@ -67,7 +67,7 @@ test.describe('Mychannel', () => {
     await transactionPage.gotoContractPage();
     await transactionPage.ConfirmContract();
     await transactionPage.SignContract();
-
+    await transactionPage.summaryContact()
 
   });
 });

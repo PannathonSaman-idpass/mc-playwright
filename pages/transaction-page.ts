@@ -1,4 +1,4 @@
-import { Locator, Page } from "@playwright/test";
+import { expect, Locator, Page } from "@playwright/test";
 
 export class TransactionPage{
     readonly page: Page;
@@ -22,7 +22,6 @@ export class TransactionPage{
         this.gotoContract = page.getByTestId('buttonถัดไป');
         this.confirmContract = page.getByTestId('confirmContract');
         this.signContract = page.getByTestId('inputSignPad');
-
     }
 
     async ConfirmCart() {
@@ -57,7 +56,17 @@ export class TransactionPage{
                 y: 194
             }
         });
+        await this.page.waitForLoadState('load');
+        await this.page.waitForTimeout(3000);
+        await this.nextButton.click({force:true});
+        // await this.page.screenshot()
+        
+    }
+
+    async summaryContact() {
+        // await expect(this.page.getByTestId('labelSummaryCustomer')).toHaveText('รายละเอียดผู้ใช้บริการ');
         await this.nextButton.click();
+        // await this.page.waitForTimeout(5000);
     }
 
 }
