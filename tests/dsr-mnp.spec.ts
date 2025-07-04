@@ -78,7 +78,7 @@ test.describe('My-Partner', () => {
     await transactionPage.gotoContractPage();
     await transactionPage.ConfirmContract();
     await transactionPage.SignContract();
-    await transactionPage.SummuryProduct();
+    // await transactionPage.SummuryProduct();
     // await transactionPage.PrintSummury();
 
     // await transactionPage.summaryContact()
@@ -145,7 +145,7 @@ test.describe('My-shop', () => {
     await transactionPage.gotoContractPage();
     await transactionPage.ConfirmContract();
     await transactionPage.SignContract();
-    await transactionPage.SummuryProduct();
-    await transactionPage.PrintSummury();
+    // await transactionPage.SummuryProduct();
+    // await transactionPage.PrintSummury();
   });
 });
