@@ -9,7 +9,6 @@ import path from 'path';
 // import path from 'path';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
 const fakeVideoPath = path.resolve(__dirname, './resources/testmock.y4m');
-
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
