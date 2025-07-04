@@ -49,7 +49,7 @@ export default defineConfig({
                     args: ['--disable-web-security',
                         '--use-fake-ui-for-media-stream',
                         '--use-fake-device-for-media-stream',
-                        "--use-file-for-fake-video-capture=C:\\Work\\Tester\\Automate\\mc-playwright\\resources\\testmock.y4m"
+                        "--use-file-for-fake-video-capture=C:\\Users\\noraf\\Downloads\\AIS\\mc-playwright\\resources\\testmock.y4m"
                     ],
         }
        },
