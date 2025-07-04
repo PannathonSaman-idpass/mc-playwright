@@ -117,6 +117,7 @@ test.describe('My-shop', () => {
     await productPage.gotoforU();
 
     await kycPage.TakePhoto();
+    await kycPage.ConfirmTakePhoto();
     await kycPage.CheckCustInfo();
 
     await mobileNumPage.ChooseNumber();
@@ -127,6 +128,8 @@ test.describe('My-shop', () => {
     // await campaignPage.ChooseTrade();
 
     await campaignPage.AddDocoument();
+    await campaignPage.AddDocumentCapture();
+    await campaignPage.ConfirmDocument();
     
     await campaignPage.ChoosePackage();
     await campaignPage.ChooseCare();
