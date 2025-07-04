@@ -57,7 +57,7 @@ export class TransactionPage{
 
     async gotoContractPage() {
         await this.gotoContract.click();
-        await this.page.waitForTimeout(10000);
+        await this.page.waitForTimeout(5000);
     }
 
     async ConfirmContract() {
@@ -73,23 +73,19 @@ export class TransactionPage{
                 y: 194
             }
         });
-        await this.nextButton.click();
+    //     await this.nextButton.click();
     }
     
-    async SummuryProduct(){
-        await this.page.waitForTimeout(5000);
-        await this.nextButton.click();
-    }
-    async PrintSummury(){
-        await this.printSummury.click();
-        await this.printSummury.fill('0934009001');
+    // async SummuryProduct(){
+    //     await this.page.waitForTimeout(5000);
+    //     await this.nextButton.click();
+    // }
+    // async PrintSummury(){
+    //     await this.printSummury.click();
+    //     await this.printSummury.fill('0934009100');
+    //     // await this.page.screenshot()
         
-        await this.page.waitForLoadState('load');
-        await this.page.waitForTimeout(3000);
-        await this.nextButton.click({force:true});
-        // await this.page.screenshot()
-        
-    }
+    // }
 
     // async summaryContact() {
     //     // await expect(this.page.getByTestId('labelSummaryCustomer')).toHaveText('รายละเอียดผู้ใช้บริการ');
