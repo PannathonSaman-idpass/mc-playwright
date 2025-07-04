@@ -28,7 +28,8 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://localhost:3000',
-
+    viewport: { width: 768, height: 1000 },
+    video: "on",
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     headless: false,
@@ -54,7 +55,7 @@ export default defineConfig({
         }
        },
     },
- 
+//  C:\\อบรม-automate-play-wright-18-06-2568\\mychannel-sale-e2e\\e2e-test\\resources\\new-ca-pinkcard.y4m
 
     // {
     //   name: 'firefox',

@@ -53,6 +53,7 @@ test.describe('My-Partner', () => {
     await productPage.gotoforU();
 
     await kycPage.TakePhoto();
+    await kycPage.ConfirmTakePhoto();
     await kycPage.CheckCustInfo();
 
     await mobileNumPage.ChooseNumber();
@@ -80,6 +81,7 @@ test.describe('My-Partner', () => {
     await transactionPage.SummuryProduct();
     await transactionPage.PrintSummury();
 
+    // await transactionPage.summaryContact()
 
   });
 });

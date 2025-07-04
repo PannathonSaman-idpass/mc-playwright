@@ -84,6 +84,17 @@ export class TransactionPage{
         await this.printSummury.click();
         await this.printSummury.fill('0934009001');
         
+        await this.page.waitForLoadState('load');
+        await this.page.waitForTimeout(3000);
+        await this.nextButton.click({force:true});
+        // await this.page.screenshot()
+        
     }
+
+    // async summaryContact() {
+    //     // await expect(this.page.getByTestId('labelSummaryCustomer')).toHaveText('รายละเอียดผู้ใช้บริการ');
+    //     await this.nextButton.click();
+    //     // await this.page.waitForTimeout(5000);
+    // }
 
 }
