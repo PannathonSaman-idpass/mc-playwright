@@ -1,5 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-import { on } from 'events';
+import path from 'path';
 
 /**
  * Read environment variables from file.
@@ -8,6 +8,7 @@ import { on } from 'events';
 // import dotenv from 'dotenv';
 // import path from 'path';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
+const fakeVideoPath = path.resolve(__dirname, './resources/testmock.y4m');
 
 /**
  * See https://playwright.dev/docs/test-configuration.
@@ -50,7 +51,7 @@ export default defineConfig({
                     args: ['--disable-web-security',
                         '--use-fake-ui-for-media-stream',
                         '--use-fake-device-for-media-stream',
-                        "--use-file-for-fake-video-capture=C:\\Users\\noraf\\Downloads\\AIS\\mc-playwright\\resources\\testmock.y4m"
+                        `--use-file-for-fake-video-capture=${fakeVideoPath}`
                     ],
         }
        },
