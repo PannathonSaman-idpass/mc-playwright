@@ -16,13 +16,13 @@ test.describe('Mychannel', () => {
   test.setTimeout(150000);
   const url = "https://sit-mychannel.cdc.ais.th/newlogin/callback-signin"
 
-  test.beforeEach(async({ page }) => {
-      const loginPage = new LoginPage(page);
-  
-      await loginPage.gotoUrl(url);
-      await loginPage.temporaryLogin();
-    });
-  
+  test.beforeEach(async ({ page }) => {
+    const loginPage = new LoginPage(page);
+
+    await loginPage.gotoUrl(url);
+    await loginPage.temporaryLogin();
+  });
+
 
   test('Device Sale MNP', async ({ page }) => {
     const loginPage = new LoginPage(page);
@@ -34,7 +34,7 @@ test.describe('Mychannel', () => {
     const transactionPage = new TransactionPage(page);
 
     await loginPage.Login(userLogin.username, userLogin.password);
-  
+
     await landingPage.gotoSaleMenu();
     await landingPage.gotoDeviceSale();
 
@@ -56,7 +56,7 @@ test.describe('Mychannel', () => {
     await campaignPage.AddDocoument();
     await campaignPage.AddDocumentCapture();
     await campaignPage.ConfirmDocument();
-    
+
     await campaignPage.ChoosePackage();
     await campaignPage.ChooseCare();
     await campaignPage.gotoCart();
@@ -67,7 +67,15 @@ test.describe('Mychannel', () => {
     await transactionPage.gotoContractPage();
     await transactionPage.ConfirmContract();
     await transactionPage.SignContract();
+    await page.getByTestId("buttonNext").click();
+    await page.getByTestId('genqueuebymobileno').click();
+    await page.getByTestId('genqueuebymobileno').fill('0934009001');
 
 
   });
+  test('sale-convert', async ({ page }) => {
+
+  })
 });
+
+

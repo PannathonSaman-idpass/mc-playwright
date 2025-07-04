@@ -57,7 +57,8 @@ export class TransactionPage{
                 y: 194
             }
         });
-        //await this.nextButton.click();
+        await this.nextButton.click();
+        
 
     }
 
