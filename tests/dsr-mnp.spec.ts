@@ -26,13 +26,13 @@ test.describe('My-Partner', () => {
   test.setTimeout(150000);
   const url = "https://sit-mychannel.cdc.ais.th/newlogin/callback-signin"
 
-  test.beforeEach(async({ page }) => {
-      const loginPage = new LoginPage(page);
-  
-      await loginPage.gotoUrl(url);
-      await loginPage.temporaryLogin();
-    });
-  
+  test.beforeEach(async ({ page }) => {
+    const loginPage = new LoginPage(page);
+
+    await loginPage.gotoUrl(url);
+    await loginPage.temporaryLogin();
+  });
+
 
   test('Device Sale MNP Imel', async ({ page }) => {
     const loginPage = new LoginPage(page);
@@ -44,7 +44,7 @@ test.describe('My-Partner', () => {
     const transactionPage = new TransactionPage(page);
 
     await loginPage.Login(userLogin.username, userLogin.password);
-  
+
     await landingPage.gotoSaleMenu();
     await landingPage.gotoDeviceSale();
 
@@ -66,7 +66,7 @@ test.describe('My-Partner', () => {
     await campaignPage.AddDocoument();
     await campaignPage.AddDocumentCapture();
     await campaignPage.ConfirmDocument();
-    
+
     await campaignPage.ChoosePackage();
     await campaignPage.ChooseCare();
     await campaignPage.gotoCart();
@@ -84,6 +84,9 @@ test.describe('My-Partner', () => {
     // await transactionPage.summaryContact()
 
   });
+  test('sale-convert', async ({ page }) => {
+
+  })
 });
 
 test.describe('My-shop', () => {
