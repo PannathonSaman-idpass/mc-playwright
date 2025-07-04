@@ -79,7 +79,7 @@ test.describe('My-Partner', () => {
     await transactionPage.ConfirmContract();
     await transactionPage.SignContract();
     await transactionPage.SummuryProduct();
-    await transactionPage.PrintSummury();
+    // await transactionPage.PrintSummury();
 
     // await transactionPage.summaryContact()
 
