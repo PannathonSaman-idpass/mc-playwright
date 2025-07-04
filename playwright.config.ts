@@ -1,5 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-import { on } from 'events';
+import path from 'path';
 
 /**
  * Read environment variables from file.
@@ -8,7 +8,7 @@ import { on } from 'events';
 // import dotenv from 'dotenv';
 // import path from 'path';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
-
+const fakeVideoPath = path.resolve(__dirname, './resources/testmock.y4m');
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
@@ -28,7 +28,8 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://localhost:3000',
-
+    viewport: { width: 768, height: 1000 },
+    video: "on",
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     headless: false,
@@ -49,12 +50,12 @@ export default defineConfig({
                     args: ['--disable-web-security',
                         '--use-fake-ui-for-media-stream',
                         '--use-fake-device-for-media-stream',
-                        "--use-file-for-fake-video-capture=C:\\Work\\Tester\\Automate\\mc-playwright\\resources\\testmock.y4m"
+                        `--use-file-for-fake-video-capture=${fakeVideoPath}`
                     ],
         }
        },
     },
- 
+//  C:\\อบรม-automate-play-wright-18-06-2568\\mychannel-sale-e2e\\e2e-test\\resources\\new-ca-pinkcard.y4m
 
     // {
     //   name: 'firefox',

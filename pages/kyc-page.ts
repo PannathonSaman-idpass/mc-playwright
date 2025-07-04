@@ -6,6 +6,7 @@ export class KYCPage {
     readonly takePhotoButton: Locator;
     readonly nextButton: Locator;
     readonly custInfoNextButton: Locator;
+    readonly newChannelButton: Locator;
     readonly NewOrder: Locator;
     // readonly CheckCondition: Locator;
 
@@ -15,6 +16,7 @@ export class KYCPage {
         this.takePhotoButton = page.getByTestId('captureIdCard');
         this.nextButton = page.getByTestId('buttonNext');
         this.custInfoNextButton = page.getByTestId('buttonNext');
+        this.newChannelButton = page.getByTestId('buttonCreateNewOrder');
 
         // this.CheckCondition = page.getByText('ต้องการทำรายการเดิมหรือไม่?');
         this.NewOrder = page.getByTestId('buttonCreateNewOrder');
@@ -45,7 +47,14 @@ export class KYCPage {
 
 
     async CheckCustInfo() {
-        await this.custInfoNextButton.click();
+        try {
+            await this.newChannelButton.waitFor({ state: 'visible', timeout: 10000 });
+            await this.newChannelButton.click();
+            await this.custInfoNextButton.click();
+            } 
+        catch (error) {
+            await this.custInfoNextButton.click();
+            }
     }
 
 
